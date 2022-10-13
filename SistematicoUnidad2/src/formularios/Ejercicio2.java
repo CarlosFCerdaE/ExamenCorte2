@@ -4,12 +4,17 @@
  */
 package formularios;
 
+import java.util.ArrayList;
+import modelos.MEjercicio2;
+import javax.swing.JOptionPane;
+
 /**
  *
- * @author labc205
+ * @author labc205 (Gabriel Chang)
  */
 public class Ejercicio2 extends javax.swing.JFrame {
-
+    MEjercicio2 obj = new MEjercicio2();
+    ArrayList<Integer> edades = new ArrayList<>();
     /**
      * Creates new form Ejercicio2
      */
@@ -26,22 +31,217 @@ public class Ejercicio2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLblTitulo = new javax.swing.JLabel();
+        jLblEdad = new javax.swing.JLabel();
+        jTfEdad = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTaEdades = new javax.swing.JTextArea();
+        jBtnAgregar = new javax.swing.JButton();
+        jBtnObtenerPromedio = new javax.swing.JButton();
+        jLblPromedio = new javax.swing.JLabel();
+        jTfPromedio = new javax.swing.JTextField();
+        jBtnObtenerMayor = new javax.swing.JButton();
+        jLblMayor = new javax.swing.JLabel();
+        jTfMayor = new javax.swing.JTextField();
+        jBtnObtenerMayor1 = new javax.swing.JButton();
+        jLblMenor = new javax.swing.JLabel();
+        jTfMenor = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ejercicio2");
+
+        jLblTitulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLblTitulo.setText("Dada n cantidad de edades");
+
+        jLblEdad.setText("Edad:");
+
+        jTaEdades.setColumns(20);
+        jTaEdades.setRows(5);
+        jScrollPane1.setViewportView(jTaEdades);
+
+        jBtnAgregar.setText("Agregar");
+        jBtnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnAgregarActionPerformed(evt);
+            }
+        });
+
+        jBtnObtenerPromedio.setText("Obtener Media Aritmética");
+        jBtnObtenerPromedio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnObtenerPromedioActionPerformed(evt);
+            }
+        });
+
+        jLblPromedio.setText("Promedio:");
+
+        jBtnObtenerMayor.setText("Obtener Edad Mayor");
+        jBtnObtenerMayor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnObtenerMayorActionPerformed(evt);
+            }
+        });
+
+        jLblMayor.setText("Edad Mayor:");
+
+        jBtnObtenerMayor1.setText("Obtener Edad Menor");
+        jBtnObtenerMayor1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnObtenerMayor1ActionPerformed(evt);
+            }
+        });
+
+        jLblMenor.setText("Edad Menor:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLblTitulo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(48, 48, 48)
+                                .addComponent(jLblEdad)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTfEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(62, 62, 62)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(85, 85, 85)
+                                    .addComponent(jLblMayor)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTfMayor, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(59, 59, 59)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jBtnObtenerMayor1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jBtnAgregar)
+                                                .addComponent(jBtnObtenerPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLblPromedio)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jTfPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jBtnObtenerMayor, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(88, 88, 88)
+                                .addComponent(jLblMenor)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTfMenor, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLblTitulo)
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLblEdad)
+                    .addComponent(jTfEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBtnAgregar))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jBtnObtenerPromedio)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLblPromedio)
+                            .addComponent(jTfPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtnObtenerMayor)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLblMayor)
+                            .addComponent(jTfMayor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jBtnObtenerMayor1)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLblMenor)
+                            .addComponent(jTfMenor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 23, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBtnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAgregarActionPerformed
+        // TODO add your handling code here:
+        try {
+            String edad = this.jTfEdad.getText();
+            this.jTaEdades.append(edad + '\n');
+            
+            int enteroEdad = Integer.parseInt(edad);
+            edades.add(enteroEdad);
+            
+            /* PROBANDO METODO SORT
+            System.out.println("sin ordenar:");
+            for(int j: edades) {
+                System.out.println(j);
+            } */
+            
+            obj.ordenarAL(edades);
+            
+            //obj.encontrarPromedio(edades);
+            
+            /*
+            System.out.println("ordernado:");
+            for(int j: edades) {
+                System.out.println(j);
+            } */
+            
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+    }//GEN-LAST:event_jBtnAgregarActionPerformed
+
+    private void jBtnObtenerPromedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnObtenerPromedioActionPerformed
+        // TODO add your handling code here:
+        try {
+            String text = String.valueOf(obj.encontrarPromedio(edades));
+            this.jTfPromedio.setText(text);
+            
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+
+        }
+    }//GEN-LAST:event_jBtnObtenerPromedioActionPerformed
+
+    private void jBtnObtenerMayorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnObtenerMayorActionPerformed
+        // TODO add your handling code here:
+        try {
+            obj.ordenarAL(edades);
+            String texto = String.valueOf(edades.get(edades.size() - 1));
+            this.jTfMayor.setText(texto);
+            
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+    }//GEN-LAST:event_jBtnObtenerMayorActionPerformed
+
+    private void jBtnObtenerMayor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnObtenerMayor1ActionPerformed
+        // TODO add your handling code here:
+        try {
+            obj.ordenarAL(edades);
+            String texto = String.valueOf(edades.get(0));
+            this.jTfMenor.setText(texto);
+            
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+    }//GEN-LAST:event_jBtnObtenerMayor1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +279,20 @@ public class Ejercicio2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnAgregar;
+    private javax.swing.JButton jBtnObtenerMayor;
+    private javax.swing.JButton jBtnObtenerMayor1;
+    private javax.swing.JButton jBtnObtenerPromedio;
+    private javax.swing.JLabel jLblEdad;
+    private javax.swing.JLabel jLblMayor;
+    private javax.swing.JLabel jLblMenor;
+    private javax.swing.JLabel jLblPromedio;
+    private javax.swing.JLabel jLblTitulo;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTaEdades;
+    private javax.swing.JTextField jTfEdad;
+    private javax.swing.JTextField jTfMayor;
+    private javax.swing.JTextField jTfMenor;
+    private javax.swing.JTextField jTfPromedio;
     // End of variables declaration//GEN-END:variables
 }
