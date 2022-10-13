@@ -102,6 +102,11 @@ public class Ejercicio3 extends javax.swing.JFrame {
         });
 
         jbtnSiguiente.setText(">>");
+        jbtnSiguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnSiguienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -203,12 +208,14 @@ public class Ejercicio3 extends javax.swing.JFrame {
         double salary = Double.parseDouble(jtfSalario.getText());
         
         empleadoo.agregarEmpleado(code, name,lastname, role, salary);
-        iterador = 0;
+        iterador = empleadoo.getListEmpleado().size();
         jtfCodigo.setText("");
         jtfNombres.setText("");
         jtfApellidos.setText("");
         jtfDisplay.setText("");
-        jcbCargo.setSelectedIndex(iterador);
+        jcbCargo.setSelectedIndex(0);
+        jtfSalario.setText("");
+        jtfDisplay.setText(iterador + " de " + empleadoo.getListEmpleado().size());
         
         
     }//GEN-LAST:event_jbtnGuardarActionPerformed
@@ -216,8 +223,30 @@ public class Ejercicio3 extends javax.swing.JFrame {
     private void jbtnAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAnteriorActionPerformed
         // TODO add your handling code here:
         iterador-=1;
+        if(iterador<0)iterador=empleadoo.getListEmpleado().size()-1;
+    
         jtfCodigo.setText(String.valueOf(empleadoo.getListEmpleado().get(iterador).getCodigo()));
+        jtfNombres.setText(empleadoo.getListEmpleado().get(iterador).getNombre());
+        jtfApellidos.setText(empleadoo.getListEmpleado().get(iterador).getApellidos());
+        jcbCargo.setSelectedItem(empleadoo.getListEmpleado().get(iterador).getCargo());
+        jtfSalario.setText(String.valueOf(empleadoo.getListEmpleado().get(iterador).getSalario()));
+        jtfDisplay.setText(iterador+1 + " de " + empleadoo.getListEmpleado().size());
+        
     }//GEN-LAST:event_jbtnAnteriorActionPerformed
+
+    private void jbtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSiguienteActionPerformed
+        // TODO add your handling code here:
+        iterador+=1;
+        if(iterador>=empleadoo.getListEmpleado().size())iterador=0;
+      
+        
+        jtfCodigo.setText(String.valueOf(empleadoo.getListEmpleado().get(iterador).getCodigo()));
+        jtfNombres.setText(empleadoo.getListEmpleado().get(iterador).getNombre());
+        jtfApellidos.setText(empleadoo.getListEmpleado().get(iterador).getApellidos());
+        jcbCargo.setSelectedItem(empleadoo.getListEmpleado().get(iterador).getCargo());
+        jtfSalario.setText(String.valueOf(empleadoo.getListEmpleado().get(iterador).getSalario()));
+        jtfDisplay.setText(iterador+1 + " de " + empleadoo.getListEmpleado().size());
+    }//GEN-LAST:event_jbtnSiguienteActionPerformed
 
     /**
      * @param args the command line arguments
